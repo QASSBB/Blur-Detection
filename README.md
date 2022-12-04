@@ -33,6 +33,6 @@ A為影像，G為梯度，兩個分量結合為梯度
 ![image](https://user-images.githubusercontent.com/79627981/205481733-8a4e917c-fcef-48e1-aef7-d10015930088.png)
  ![image](https://user-images.githubusercontent.com/79627981/205481739-8926d694-b1d7-4fe7-9637-115810854d4b.png)
  ![image](https://user-images.githubusercontent.com/79627981/205481880-823ccec9-9afe-4f3a-9d85-218659765390.png)
-
+<script src="https://gist.github.com/QASSBB/801c9d627e9851385de08c31110e187f.js"></script>
 ## Reference
 https://medium.com/%E9%9B%BB%E8%85%A6%E8%A6%96%E8%A6%BA/%E9%82%8A%E7%B7%A3%E5%81%B5%E6%B8%AC-%E7%B4%A2%E4%BC%AF%E7%AE%97%E5%AD%90-sobel-operator-95ca51c8d78a
