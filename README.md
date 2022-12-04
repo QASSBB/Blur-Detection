@@ -29,7 +29,7 @@
 ### 計算出來的值為:70.8777490022391
 ### 左上:灰階 右上:sobel 之X方向 左下: sobel 之Y方向 右下: sobel之X+Y
 ![image](https://user-images.githubusercontent.com/79627981/205481728-7af755ed-345f-4276-9a68-91c7b032fa7d.png)
-![image](https://user-images.githubusercontent.com/79627981/205481733-8a4e917c-fcef-48e1-aef7-d10015930088.png)
+![image](https://user-images.githubusercontent.com/79627981/205482349-156026c7-6dec-44d0-ac8e-96221efa7108.png)
 ![image](https://user-images.githubusercontent.com/79627981/205481739-8926d694-b1d7-4fe7-9637-115810854d4b.png)
 
 ## Reference
