@@ -1,5 +1,4 @@
-# Blur-Detection
-## 模糊偵測
+# Blur-Detection 模糊偵測
 ## 模糊圖像判斷方法:
 ## 簡介: 使用Sobel運算子對目標圖像進行卷積，若圖像低於設定的閥值則為模糊。
 ## 步驟:
@@ -20,14 +19,14 @@
 ### 負責垂直邊界
 ![image](https://user-images.githubusercontent.com/79627981/205481715-e19c920c-2854-4b80-a3e2-cae8a984ae1f.png)
 
-###　A為影像，G為梯度，兩個分量結合為梯度
+### A為影像，G為梯度，兩個分量結合為梯度
 ![image](https://user-images.githubusercontent.com/79627981/205481719-5a8a653b-2233-4812-8723-22cf035572f8.png)
 
 ### 3.	計算圖片的平方差
  ![image](https://user-images.githubusercontent.com/79627981/205481722-ff899415-7e62-44f1-879c-10c618e62093.png)
 
-###　4.	若平方差小於設定好的閥值，則該圖片為模糊圖片
-### 計算出來的值為70.8777490022391
+### 4.	若平方差小於設定好的閥值，則該圖片為模糊圖片
+### 計算出來的值為:70.8777490022391
 ### 左上:灰階 右上:sobel 之X方向 左下: sobel 之Y方向 右下: sobel之X+Y
 ![image](https://user-images.githubusercontent.com/79627981/205481728-7af755ed-345f-4276-9a68-91c7b032fa7d.png)
 ![image](https://user-images.githubusercontent.com/79627981/205481733-8a4e917c-fcef-48e1-aef7-d10015930088.png)
