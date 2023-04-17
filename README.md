@@ -65,4 +65,11 @@ plt.ylabel('s(r)')
 ```
 ## ![image](https://user-images.githubusercontent.com/79627981/232484721-100a6cf4-dc04-4c61-a408-2c95f85e1814.png)
 ## ![image](https://user-images.githubusercontent.com/79627981/232484756-7fc50fac-f291-4c69-93fa-3deffd8c5d08.png)
+# 
+## 有無PCA差異
+### 無PCA 
+### ![image](https://user-images.githubusercontent.com/79627981/232486691-88f8d215-f5b0-40e9-88c9-b86b438d631f.png) ![image](https://user-images.githubusercontent.com/79627981/232486817-ec09bded-d67e-4073-a2cc-e497ee1b3f39.png) ![image](https://user-images.githubusercontent.com/79627981/232486833-a3cca5ac-e7ce-4c14-a4b0-cf5720a77e02.png)
+
+### 有PCA ![image](https://user-images.githubusercontent.com/79627981/232486904-78cdc8ba-2488-4638-b561-31a72ef6196a.png) ![image](https://user-images.githubusercontent.com/79627981/232486923-d8cfb662-e51b-4ac9-8b53-a900b173b15d.png) ![image](https://user-images.githubusercontent.com/79627981/232486943-6023ca8f-da7b-4259-81a5-f34467f85927.png)
+
 
