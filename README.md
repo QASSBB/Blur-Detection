@@ -68,8 +68,61 @@ plt.ylabel('s(r)')
 # 
 ## 有無PCA差異
 ### 無PCA 
-### ![image](https://user-images.githubusercontent.com/79627981/232486691-88f8d215-f5b0-40e9-88c9-b86b438d631f.png) ![image](https://user-images.githubusercontent.com/79627981/232486817-ec09bded-d67e-4073-a2cc-e497ee1b3f39.png) ![image](https://user-images.githubusercontent.com/79627981/232486833-a3cca5ac-e7ce-4c14-a4b0-cf5720a77e02.png)
+### ![image](https://user-images.githubusercontent.com/79627981/232486691-88f8d215-f5b0-40e9-88c9-b86b438d631f.png) 
+### ![image](https://user-images.githubusercontent.com/79627981/232486817-ec09bded-d67e-4073-a2cc-e497ee1b3f39.png) 
+### ![image](https://user-images.githubusercontent.com/79627981/232486833-a3cca5ac-e7ce-4c14-a4b0-cf5720a77e02.png)
 
-### 有PCA ![image](https://user-images.githubusercontent.com/79627981/232486904-78cdc8ba-2488-4638-b561-31a72ef6196a.png) ![image](https://user-images.githubusercontent.com/79627981/232486923-d8cfb662-e51b-4ac9-8b53-a900b173b15d.png) ![image](https://user-images.githubusercontent.com/79627981/232486943-6023ca8f-da7b-4259-81a5-f34467f85927.png)
+### 有PCA 
+### ![image](https://user-images.githubusercontent.com/79627981/232486904-78cdc8ba-2488-4638-b561-31a72ef6196a.png) 
+### ![image](https://user-images.githubusercontent.com/79627981/232486923-d8cfb662-e51b-4ac9-8b53-a900b173b15d.png) 
+### ![image](https://user-images.githubusercontent.com/79627981/232486943-6023ca8f-da7b-4259-81a5-f34467f85927.png)
 
+## 使用excel內建函式將400個特徵減少為4個特徵
+## 分別為:
+### 1.	var(點與平均值之差的平方的平均值(方差)): 使用=VAR
+### 2.	quartile(中位數): =QUARTILE
+### 3.	slope(斜率): 使用=LINEST
+### 4.	intercept(截距): 使用=LINEST
+### ![image](https://user-images.githubusercontent.com/79627981/232487279-71990324-7f43-4549-8a23-3cdadc63c006.png)
+## 輸出結果:
+### ![image](https://user-images.githubusercontent.com/79627981/232487300-c6094364-c7a6-4601-8437-6a0357c7023a.png)
+## 程式碼:
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.decomposition import PCA
+from sklearn import svm
+from sklearn.metrics import confusion_matrix, accuracy_score
 
+# 從CSV文件中讀取數據
+df = pd.read_csv('E:/python_program/test.csv', encoding='UTF-8')
+# 提取特徵和標籤
+X = df.loc[:, ['var','quartile','slope','intercept']].values
+y = df.loc[:, 'variety'].values
+# 將數據集分為訓練集和測試集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+# 建立支援向量機模型，並指定參數C為1。C代表著錯誤項的懲罰因子，越大代表更嚴格的限制
+linearSvcModel = svm.SVC(kernel='linear', C=1.0)
+# 使用訓練資料train_reduced和對應的標籤y_train訓練支援向量機模型
+linearSvcModel.fit(X_train, y_train)
+# 使用測試資料進行預測
+y_pred = linearSvcModel.predict(X_test)
+# 計算混淆矩陣
+# 混淆矩陣是一個用於評估分類模型預測結果的矩陣，用於展示實際樣本和預測樣本之間的差異。
+# 混淆矩陣列出了四種結果：真陽性（TP）、假陽性（FP）、真陰性（TN）和假陰性（FN）。
+# 混淆矩陣可用於計算模型的準確性、精確度、召回率和F1分數等評估指標。
+
+cm = confusion_matrix(y_test, y_pred)
+print("混淆矩陣:\n", cm)
+# 計算準確率
+accuracy = linearSvcModel.score(X_train, y_train)
+print('準確率:',accuracy)
+plt.title('LinearSVC (linear kernel)_NoPCA'+ '\n' + 'Accuracy:%.2f' % accuracy)
+# 將訓練集資料 X_train 中的第一個和第二個特徵以點的形式繪製在二維平面上。其中，參數 c=y_train 代表將資料按照 y_train 的不同取值(0,1)，分別用不同的顏色標記在圖中
+plt.scatter(X_train[:, 0], X_train[:, 1], c=y_train)
+plt.show()
+```
